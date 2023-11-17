@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body{
+            background-color: #f1f1f1;
+        }
+    
+        .chatgpt{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .chatgpt__header{
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .chatgpt__header__logo{
+            width: 10%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .chatgpt__header__logo img{
+            width: 100%;
+            height: 100%;
+        }
+    
+        .chatgpt__header__title{
+            width: 90%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .chatgpt__header__title h1{
+            font-size: 2rem;
+            font-weight: 500;
+        }
+    
+        .chatgpt__body{
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .chatgpt__body__chat{
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .chatgpt__body__chat__message{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    
+        .chatgpt__body__chat__message__bot{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+</style>
+<body>
+    <!-- Creating chatgpt like interface -->
+    <div class="chatgpt">
+        <div class="chatgpt__header">
+            <div class="chatgpt__header__logo">
+                <img src="OIP.jpg" alt="SimpliLegal">
+            </div>
+            <div class="chatgpt__header__title">
+                <h1>SimpliLegal: Your Legal AI Partner</h1>
+            </div>
+        </div>
+        <div class="chatgpt__body">
+            <div class="chatgpt__body__chat">
+                    <div style="text-align: center;" class="chatgpt__body__chat__message__bot">
+                        <p>Hi, I am ChatGPT. I am a chatbot. I can talk to you.</p>
+                    </div>
+            </div>
+            <div class="chatgpt__body__input">
+                <form action="">
+                    <input type="text" name="message" id="message" placeholder="Type your message here...">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
