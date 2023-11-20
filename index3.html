@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/ecf6ebc4-48be-4aa2-a9c4-bc67e6a459fc/webchat/config.js"
+        defer></script>
+    <title>SimpliLegal</title>
+</head>
+<style>
+    img{
+        height: 98vh;
+        width: 70vw;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        position: relative;
+    }
+
+    .step {
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    .step img {
+        max-width: 100px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .step-text {
+        text-align: center;
+    }
+
+    .arrow {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #4CAF50;
+        transform: rotate(45deg);
+    }
+
+    .arrow::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #4CAF50;
+        transform: rotate(45deg);
+        top: 50%;
+        left: 50%;
+        margin-top: -5px;
+        margin-left: -5px;
+    }
+
+    .arrow::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 60px;
+        background-color: #4CAF50;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    }
+</style>
+<body>
+    <img src="Steps2.png" alt="image">
+</body>
+</html>

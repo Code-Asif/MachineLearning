@@ -4,116 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://webchat-styler-css.botpress.app/prod/code/5d1dc558-abca-4eaf-b41c-68ad1a5c6b21/v584/style.css">
+
     <title>ChatGPT Page</title>
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <script src="https://mediafiles.botpress.cloud/ecf6ebc4-48be-4aa2-a9c4-bc67e6a459fc/webchat/config.js"
-        defer></script>
+         defer></script>
+    <script>
+        window.botpressWebChat.init({
+            "botId": "ecf6ebc4-48be-4aa2-a9c4-bc67e6a459fc",
+            "clientId": "ecf6ebc4-48be-4aa2-a9c4-bc67e6a459fc",
+
+            "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+            "messagingUrl": "https://messaging.botpress.cloud",
+
+            "botName": "Abhinav",
+
+            // Set the width of the WebChat container and layout to 100% (Full Screen)
+            "containerWidth": "100%25",
+            "layoutWidth": "100%25",
+
+            // Hide the widget and disable animations
+           
+        });
+
+        // Opens up the Chatbot by default
+        // This lets users start chatting with the Chatbot without needing to click any buttons or menus.
+        window.botpressWebChat.onEvent(
+            function () {
+                window.botpressWebChat.sendEvent({ type: "show" });
+            },
+            ["LIFECYCLE.LOADED"]
+        );
+    </script>
+
 </head>
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
-
-    .chat-container {
-        max-width: 600px;
-        margin: 20px auto;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .chat-header {
-        background-color: #4CAF50;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .chat-body {
-        padding: 20px;
-        max-height: 300px;
-        overflow-y: auto;
-    }
-
-    .chat-input {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-    }
-
-    input {
-        flex: 1;
-        padding: 8px;
-        margin-right: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    button {
-        background-color: #4CAF50;
-        color: #fff;
-        border: none;
-        padding: 8px 15px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: #45a049;
-    }
-    .btw-
-</style>
-<script>
-    function sendMessage() {
-        var userInput = document.getElementById("user-input").value;
-        var chatBody = document.getElementById("chat-body");
-
-        // Create a new message element
-        var messageElement = document.createElement("div");
-        messageElement.className = "message";
-        messageElement.innerText = "User: " + userInput;
-
-        // Append the message to the chat body
-        chatBody.appendChild(messageElement);
-
-        // Clear the input field
-        document.getElementById("user-input").value = "";
-
-        // Simulate a response from ChatGPT (you would replace this with actual logic)
-        setTimeout(function () {
-            var responseElement = document.createElement("div");
-            responseElement.className = "message";
-            responseElement.innerText = "ChatGPT: This is a response from ChatGPT.";
-
-            chatBody.appendChild(responseElement);
-
-            // Scroll to the bottom of the chat body to show the latest message
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }, 500);
-    }
-
-</script>
 
 <body>
-
-    <div class="chat-container">
-        <div class="chat-header">
-            <h1>SimpliLegal</h1>
-        </div>
-        <div class="chat-body" id="chat-body">
-            <!-- Chat messages will be dynamically added here -->
-        </div>
-        <div class="chat-input">
-            <input type="text" id="user-input" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 
 </body>
 
