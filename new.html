@@ -5,6 +5,236 @@
   <title>Botpress in a div</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    /* This CSS rule sets the default font size of the entire document */
+    html {
+      font-size: 16px;
+    }
+
+    /* These CSS rules sets the text direction of the paragraph (RTL or LTR) */
+    p,
+    .bpw-from-bot>div,
+    #input-message {
+      direction: ltr;
+    }
+
+    /* This rule changes the color of the text in the input message */
+    #input-message {
+      color: #ffffff;
+    }
+
+    /* Changes the color of the new message indicator */
+    .bpw-new-messages-indicator {
+      background-color: #4b4b4b;
+      color: #ffffff;
+    }
+
+    /* Styling for the chat header container */
+    .bpw-header-container {
+      margin: 10px;
+      background: black;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      border: 1px;
+      border-radius: 10px;
+      color: #4e4e4e;
+    }
+
+    /* Styling for the typing bubble */
+    .bpw-typing-bubble {
+      background: #ffffff;
+    }
+
+    /* Styling for the chat bubble content */
+    .bpw-chat-bubble-content {
+      background-color: #4b4b4b;
+      border-radius: 3px;
+      border: 1px transparent;
+    }
+
+    /* Styling for the date container, header name, and header subtitle */
+    .bpw-date-container,
+    .bpw-header-name,
+    .bpw-header-subtitle {
+      color: #ffffff;
+    }
+
+    /* Changes the fill color of the header icons to white */
+    .bpw-header-icon,
+    .bpw-header-icon svg,
+    .bpw-header-icon svg path {
+      fill: #ffffff !important;
+    }
+
+    /* Changes the color of the placeholder text in the input message */
+    #input-message::placeholder {
+      color: #ffffff;
+    }
+
+
+    /* Styling for the keyboard single choice option */
+    .bpw-keyboard-single-choice {
+      background-color: #000000;
+      border: none;
+    }
+
+    /* Styling for the buttons in the chat interface */
+    .bpw-button,
+    .bpw-button-alt {
+      background-color: #323232;
+      color: #ffffff;
+      border-radius: 10px;
+      border: none;
+    }
+
+
+    /* Styling for hover effect on the buttons in the chat interface */
+    .bpw-button:hover,
+    .bpw-button-alt:hover {
+      background-color: #4b4b4b;
+    }
+
+
+    /* Styling for hyperlinks in the chat interface */
+    a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* Styling for the chat container, including color, scrollbar width and color, and border */
+    .bpw-chat-container {
+      background-color: #000000;
+      scrollbar-width: thin;
+      scrollbar-color: #4b4b4b #000000;
+      border: none;
+    }
+
+    /* Styling for the chat bubble content when it's from the bot */
+    .bpw-from-bot .bpw-chat-bubble .bpw-chat-bubble-content {
+      background-color: #4b4b4b;
+      color: #ffffff;
+    }
+
+    /* Styling for the chat bubble content when it's from the user */
+    .bpw-from-user .bpw-chat-bubble .bpw-chat-bubble-content {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    /* Styling for the composer section of the chat interface */
+    .bpw-composer {
+      background-color: #000000;
+      border-top: 1px solid #4b4b4b;
+    }
+
+
+    /* Styling for the scrollbar in the chat container */
+    .bpw-chat-container::-webkit-scrollbar,
+    .bpw-chat-container::-moz-scrollbar {
+      width: 10px;
+      background-color: #000000;
+      border: none;
+    }
+
+    /* Styling for the avatar of the bot */
+    .bpw-bot-avatar img,
+    .bpw-bot-avatar svg {
+      background: #000000;
+      border: 3px solid #ffffff;
+    }
+
+    /* Styling for the general scrollbar in the web page */
+    ::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    /* Styling for the track of the general scrollbar and the chat container scrollbar */
+    ::-webkit-scrollbar-track,
+    .bpw-chat-container::-webkit-scrollbar-track,
+    .bpw-chat-container::-moz-scrollbar-track {
+      background-color: transparent;
+    }
+
+    /* Styling for the thumb of the general scrollbar and the chat container scrollbar */
+    ::-webkit-scrollbar-thumb,
+    .bpw-chat-container::-webkit-scrollbar-thumb,
+    .bpw-chat-container::-moz-scrollbar-thumb {
+      background-color: #000000;
+      border-radius: 1rem;
+      border: 0.5rem solid transparent;
+    }
+
+    /* Styling for the floating button icon in the chat interface */
+    .bpw-floating-button i svg path {
+      fill: #ffffff;
+    }
+
+    /* Styling for the floating button in the chat interface */
+    .bpw-floating-button {
+      background: black;
+      border-radius: 52px;
+    }
+
+    /* Styling for the 'powered by' section of the chat interface */
+    .bpw-powered {
+      text-align: center;
+      padding: 10px;
+      color: #ffffff;
+      background: #000000;
+      font-size: 16px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    /* Styling for the hyperlinks in the 'powered by' section of the chat interface */
+    .bpw-powered a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    /* Styling for hover effect on the hyperlinks in the 'powered by' section of the chat interface */
+    .bpw-powered a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* Styling for the send button when it's disabled */
+    .bpw-send-button:disabled,
+    .bpw-send-button:disabled:hover {
+      opacity: 0.4;
+      background-color: var(--theme-primary);
+      cursor: default;
+    }
+
+    /* Styling for the send buttons */
+    .bpw-send-buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    /* Styling for the individual send button */
+    .bpw-send-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: var(--spacing-medium);
+      background-color: var(--theme-primary);
+      padding: 20px;
+      width: 24px;
+      height: 24px;
+      color: transparent;
+      cursor: pointer;
+      background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2217%22%20height%3D%2220%22%20viewBox%3D%220%200%2017%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M1.77152%201.04207L15.5347%209.13807C16.192%209.52472%2016.192%2010.4753%2015.5347%2010.8619L8.5%2015L1.70485%2018.9971C0.998111%2019.4129%200.118918%2018.8481%200.203121%2018.0325L0.811331%2012.1412C0.85993%2011.6705%201.23186%2011.2983%201.70256%2011.2493L8.21533%2010.5717C9.32302%2010.4565%209.44138%208.88961%208.36357%208.60928L1.54478%206.83574C1.15164%206.73349%200.859426%206.40357%200.805392%206.00096L0.27339%202.03702C0.162447%201.21039%201.05263%200.619195%201.77152%201.04207Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A') !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      transition: background-color 0.2s;
+    }
+
+    .bpw-send-button:not(:disabled):hover {
+      background-color: var(--theme-primary-hover);
+    }
+
     body {
       display: flex;
       justify-content: center;
@@ -51,7 +281,8 @@
 <body>
   <div>
     <div class="absolute inset-4 ">
-      <div class="center-div rounded-md border-zinc-200 bg-white p-2 relative h-full w-full overflow-clip border px-0 py-0">
+      <div
+        class="center-div rounded-md border-zinc-200 bg-white p-2 relative h-full w-full overflow-clip border px-0 py-0">
         <iframe title="" style="border: none;" srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
             <script>
               window.botpressWebChat.init({
@@ -79,4 +310,5 @@
     </div>
   </div>
 </body>
+
 </html>
