@@ -8,7 +8,6 @@ def fill_rental_agreement_template(name, date, address, agreement_type):
         'DatePlaceholder': date,
         'AddressPlaceholder': address,
         'AgreementTypePlaceholder': agreement_type,
-        
     }
 
     for paragraph in doc.paragraphs:
